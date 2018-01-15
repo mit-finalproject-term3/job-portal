@@ -6,7 +6,7 @@ const Mainpage = () => (
       <p>Hi,</p>
       <p>here is the main page.</p>
       <div className="mainpic_div">
-        <img src="mainpic.jpg" alt="logo" className="mainpic" width={800}/>
+        <img src="mainpic.jpg" alt="mainpic" className="mainpic" width={800}/>
       </div>
   </div>
 )
