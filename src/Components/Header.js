@@ -8,6 +8,7 @@ const Header = () => (
     <nav>
       <ul>
         <li><Link to='/'>Top</Link></li>
+          <li><Link to='/mainpage'>Mainpage</Link></li>
         <li><Link to='/private'>Private</Link></li>
         {
           !isAuthenticated() && (
