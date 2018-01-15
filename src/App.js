@@ -27,8 +27,10 @@ import { Switch, Route } from 'react-router-dom';
 import Header from './Components/Header';
 import Top from './Components/Top';
 import Private from './Components/Private';
+import Mainpage from './Components/Mainpage';
 import Login from './Auth/Login';
 import Logout from './Auth/Logout';
+import './App.css';
 
 const App = () => {
   return(
@@ -40,6 +42,7 @@ const App = () => {
         <Route path="/private" component={Private} />
         <Route path="/login" component={Login} />
         <Route path="logout" component={Logout} />
+        <Route exact path="/mainpage" component={Mainpage} />
         </Switch>
       </main>
     </div>
@@ -47,4 +50,3 @@ const App = () => {
 }
 
 export default App
-
