@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import '../App.css';
 
 class AddJob extends Component {
   render() {
     return (
-      <form className="Job-form" onSubmit={(e) => this.addNewJob(e)}>
+      <form className="job-form" onSubmit={(e) => this.addNewJob(e)}>
         <p>Add a Job</p>
         <input ref={ ( input ) => this.title = input } type="text" placeholder="Title" />
         <input ref={ ( input ) => this.sallary = input } type="text" placeholder="Sallary" />
