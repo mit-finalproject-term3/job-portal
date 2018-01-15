@@ -22,7 +22,7 @@
 
 /*current opportunities*/
 .title{
-  background-color: #f23e2d; /* Red */
+  background-color: rgb(181, 17, 17); /* Red */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -73,7 +73,7 @@ li{
   font-weight:bold;/* 字の太さ */
   text-decoration:none;/* アンダーラインなし */
   display:block;/* 横並び */
-  background:rgb(181, 17, 17); /* ピンク */
+  background:rgb(181, 17, 17); /* red */
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 
 }
@@ -110,9 +110,20 @@ li{
   box-sizing: border-box;
 }
 
-.jobs {
-  display: flex;
-  flex-wrap: wrap;
+.job {
+  display: inline-block;
+  /*flex-wrap: wrap;*/
+  position: relative;
+  padding: 5px 25px 10px 25px;
+  height: 300px;
+  max-width: 20%;
+  margin: 1%;
+   border-radius: 15px;
+  overflow:hidden;
+  background: rgb(181,17,17);
+  color: #fff;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
 }
 
 .App-header h2 {
@@ -127,11 +138,6 @@ li{
   font-size: 16px;
   padding: 8px;
   margin: 0 10px 30px 10px;
-}
-
-.job {
-  padding: 5px 25px 10px 25px;
-  max-width: 25%;
 }
 
 /* job form styles */

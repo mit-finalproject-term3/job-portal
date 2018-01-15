@@ -22,6 +22,7 @@ class JobPage extends Component {
     return (
       <div className="App">
         <Header text="Find Your new career here!" />
+        <h1 className="title">current opportunities</h1>
         <p className="App-intro">To search for current job opportunities at MIT ...</p>
         <div className="jobs">
           {
