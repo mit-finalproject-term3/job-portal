@@ -3,17 +3,12 @@ import { Redirect } from 'react-router-dom';
 import isAuthenticated from '../Auth/isAuthenticated';
 
 const Private = (props) => (
-  isAuthenticated() ? (
-    <div>
-      <h2>Private Page</h2>
-      <p>Hey, you’re logged in!</p>
-    </div>
-  ) : (
+  !isAuthenticated() ? (
     <Redirect to={{
       pathname: '/login',
       state: { from: props.location }
     }} />
-  )
+  ) : null
 )
 
 export default Private;

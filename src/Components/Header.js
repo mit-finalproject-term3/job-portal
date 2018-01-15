@@ -1,27 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import isAuthenticated from '../Auth/isAuthenticated';
+import { Layout, Menu } from 'antd';
+const { Header } = Layout;
 
-const Header = () => (
-  <header>
-    <h1>React Auth0 App</h1>
-    <nav>
-      <ul>
-        <li><Link to='/'>Top</Link></li>
-        <li><Link to='/private'>Private</Link></li>
+const header = () => (
+  <Header className="top-nav">
+    <div className="logo" />
+    <Menu
+      mode="horizontal"
+      defaultSelectedKeys={['2']}
+      style={{ lineHeight: '64px' }}
+    >
+      <Menu.Item key="1">
+        <Link to='/'>Top</Link>
+      </Menu.Item>
+      <Menu.Item key="2">
+        <Link to='/postjob'>Post Job</Link>
+      </Menu.Item>
+      <Menu.Item key="3">
         {
-          !isAuthenticated() && (
-            <li><Link to='/login'>Login</Link></li>
-          )
+          isAuthenticated() ? (<Link to='/logout'>Logout</Link>) : (<Link to='/login'>Login</Link>)
         }
-        {
-          isAuthenticated() && (
-            <li><Link to='/logout'>Logout</Link></li>
-          )
-        }
-      </ul>
-    </nav>
-  </header>
+      </Menu.Item>
+    </Menu>
+  </Header>
 )
 
-export default Header;
+export default header;
