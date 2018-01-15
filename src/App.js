@@ -29,6 +29,7 @@ import Top from './Components/Top';
 import Private from './Components/Private';
 import Login from './Auth/Login';
 import Logout from './Auth/Logout';
+import JobPage from './Components/JobPage';
 
 const App = () => {
   return(
@@ -47,4 +48,3 @@ const App = () => {
 }
 
 export default App
-

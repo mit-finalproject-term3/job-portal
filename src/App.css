@@ -8,21 +8,61 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: steelblue;
+  height: 70px;
   padding: 20px;
   color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
 }
 
 .App-intro {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* new css for job component */
+* {
+  box-sizing: border-box;
+}
+
+.jobs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.App-header h2 {
+  margin: 0;
+}
+
+.add-jobs {
+  text-align: center;
+}
+
+.add-jobs button {
+  font-size: 16px;
+  padding: 8px;
+  margin: 0 10px 30px 10px;
+}
+
+.job {
+  padding: 5px 25px 10px 25px;
+  max-width: 25%;
+}
+
+/* job form styles */
+
+.job-form {
+  width: 250px;
+  margin: 0 auto;
+}
+
+.job-form input, .job-form textarea {
+  width: 250px;
+  font-size:14px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.job-form button {
+  font-size: 16px;
+  padding: 4px;
+  margin: 10px 10px 30px 10px;
 }

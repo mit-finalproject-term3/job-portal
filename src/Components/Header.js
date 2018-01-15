@@ -1,6 +1,8 @@
-import React from 'react';
+// import React from 'react'
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import isAuthenticated from '../Auth/isAuthenticated';
+
 
 const Header = () => (
   <header>
@@ -23,5 +25,15 @@ const Header = () => (
     </nav>
   </header>
 )
+
+// class Header extends Component {
+//   render() {
+//     return (
+//       <div className="App-header">
+//         <h2>{this.props.text}</h2>
+//       </div>
+//     );
+//   }
+// }
 
 export default Header;
