@@ -28,6 +28,7 @@ import Header from './Components/Header';
 import Top from './Components/Top';
 import Private from './Components/Private';
 import Mainpage from './Components/Mainpage';
+import JobPage from './Components/JobPage';
 import Login from './Auth/Login';
 import Logout from './Auth/Logout';
 import './App.css';
@@ -41,8 +42,9 @@ const App = () => {
         <Route exact path="/" component={Top} />
         <Route path="/private" component={Private} />
         <Route path="/login" component={Login} />
-        <Route path="logout" component={Logout} />
-        <Route exact path="/mainpage" component={Mainpage} />
+        <Route path="/logout" component={Logout} />
+        <Route path="/mainpage" component={Mainpage} />
+        <Route path="/jobpage" component={JobPage} />
         </Switch>
       </main>
     </div>
