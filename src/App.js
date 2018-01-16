@@ -30,6 +30,7 @@ import Private from './Components/Private';
 import Mainpage from './Components/Mainpage';
 import JobPage from './Components/JobPage';
 import Login from './Auth/Login';
+import {Layout} from 'antd';
 import Logout from './Auth/Logout';
 import './App.css';
 
@@ -50,5 +51,8 @@ const App = () => {
     </div>
   )
 }
+
+
+
 
 export default App
