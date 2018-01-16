@@ -9,6 +9,9 @@ import {additionalJobs} from '../jobs';
 import AddJob from './AddJob';
 
 
+
+
+
 class App extends Component {
 
   constructor() {
@@ -30,15 +33,17 @@ class App extends Component {
       <div className="App">
         <Header text="Find Your new career here!" />
         <p className="App-intro">To search for current job opportunities at MIT ...</p>
+
+
         <div className="jobs">
           {
             Object
             .keys(this.state.jobs)
             .map(key => <Job key={key} meta={this.state.jobs[key]} />)
-
-
           }
+
         </div>
+
         <div className="add-jobs"><button onClick={this.loadAdditionalJobs}>Load more...</button></div>
 
         <AddJob addJob={this.addJobToGallery} />      </div>
