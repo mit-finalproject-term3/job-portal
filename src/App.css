@@ -1,3 +1,92 @@
+@import '~antd/dist/antd.css';
+
+.App {
+  text-align: center;
+}
+
+.MITlogo{
+  float: left;
+  margin: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/*IT company picture*/
+.mainpic{
+  clear: both;
+  margin-top: 70px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.mainpic_div{
+  clear: both;
+  text-align: center;
+}
+
+/*current opportunities*/
+.title{
+  background-color: rgb(181, 17, 17); /* Red */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.container{
+  margin: auto;
+  text-align: center;
+}
+
+/*======== navbar ========*/
+
+a{
+  text-decoration: none;
+}
+
+li{
+  list-style: none;
+}
+
+.menu {
+  padding:0;
+  margin:0;
+  list-style-type: none;/* 点なし */
+  margin-bottom: 10%;
+}
+
+.menu li {
+  width:20%;
+  display: inline-block;
+  padding:5px;
+  margin:0;
+  text-align:center; /* 字は中央に */
+}
+.menu li a {
+  width:auto;
+  color:#fff;/* 字の色 */
+  font-size:24px;/* 字の大きさ */
+  font-weight:bold;/* 字の太さ */
+  text-decoration:none;/* アンダーラインなし */
+  display:block;/* 横並び */
+  background:rgb(181, 17, 17); /* red */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+
+.menu li a:hover {
+  background:#555;
+}
+
+
+/*======== ali css ========*/
+
 .App {
   text-align: center;
 }
@@ -7,21 +96,81 @@
   height: 80px;
 }
 
-.top-nav {
-  background-color: #fff;
+.App-header {
+  background-color: steelblue;
+  height: 70px;
+  padding: 20px;
+  color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
+.top-nav {
+  background-color: #fff;
 }
 
 .App-intro {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* new css for job component */
+* {
+  box-sizing: border-box;
+}
+
+.job {
+  display: inline-block;
+  /*flex-wrap: wrap;*/
+  position: relative;
+  padding: 5px 25px 10px 25px;
+  height: 300px;
+  max-width: 20%;
+  margin: 1%;
+   border-radius: 15px;
+  overflow:hidden;
+  background: rgb(181,17,17);
+  color: #fff;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+
+.App-header h2 {
+  margin: 0;
+}
+
+.add-jobs {
+  text-align: center;
+}
+
+.add-jobs button {
+  font-size: 16px;
+  padding: 8px;
+  margin: 0 10px 30px 10px;
+}
+
+/* job form styles */
+
+.job-form {
+  width: 400px;
+  background: #FAFAFA;
+  margin: 0 auto;
+  padding: 30px;
+  margin: 50px auto;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  border: 6px solid #305A72;
+}
+
+.job-form input, .job-form textarea {
+  width: 250px;
+  font-size:14px;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #B0CFE0;
+}
+
+.job-form button {
+  font-size: 16px;
+  padding: 4px;
+  margin: 10px 10px 30px 10px;
 }
 
 .post-job-form{
