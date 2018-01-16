@@ -103,6 +103,10 @@ li{
   color: white;
 }
 
+.top-nav {
+  background-color: #fff;
+}
+
 .App-intro {
   font-size: large;
 }
@@ -167,4 +171,9 @@ li{
   font-size: 16px;
   padding: 4px;
   margin: 10px 10px 30px 10px;
+}
+
+.post-job-form{
+  max-width: 600px;
+  margin: 0 auto;
 }

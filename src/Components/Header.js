@@ -1,30 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import isAuthenticated from '../Auth/isAuthenticated';
+import { Layout, Menu } from 'antd';
+const { Header } = Layout;
 
-const Header = () => (
-  <header>
-  <img src="MITlogo.png" alt="logo" className="MITlogo" width={100}/>
-    <h1>MIT</h1>
-    <nav>
-        <ul className="menu">
-          <li><Link to='/'>Top</Link></li>
-          <li><Link to='/jobpage'>Job page</Link></li>
-          <li><Link to='/mainpage'>Main page</Link></li>
-          <li><Link to='/private'>Private</Link></li>
-          {
-            !isAuthenticated() && (
-              <li><Link to='/login'>Login</Link></li>
-            )
-          }
-          {
-            isAuthenticated() && (
-              <li><Link to='/logout'>Logout</Link></li>
-            )
-          }
-      </ul>
-    </nav>
-  </header>
+// Reenas version
+const header = () => (
+  <Header className="top-nav">
+    <div className="logo">
+      <img src="MITlogo.png" alt="logo" className="MITlogo" width={100}/>
+    </div>
+    <Menu
+      mode="horizontal"
+      defaultSelectedKeys={['1']}
+      style={{ lineHeight: '64px' }}
+    >
+      <Menu.Item key="1">
+        <Link to='/'>Top</Link>
+      </Menu.Item>
+      <Menu.Item key="2">
+        <Link to='/mainpage'>Main Page</Link>
+      </Menu.Item>
+      <Menu.Item key="3">
+        <Link to='/jobpage'>Job Page</Link>
+      </Menu.Item>
+      <Menu.Item key="4">
+        <Link to='/postjob'>Post Job</Link>
+      </Menu.Item>
+      <Menu.Item key="5">
+        {
+          isAuthenticated() ? (<Link to='/logout'>Logout</Link>) : (<Link to='/login'>Login</Link>)
+        }
+      </Menu.Item>
+    </Menu>
+  </Header>
 )
 
-export default Header;
+export default header;
