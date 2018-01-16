@@ -10,7 +10,7 @@ class Job extends Component {
         <h2>{ this.props.meta.title }</h2>
         </Link>
         <div><img width="200" src={ this.props.meta.poster } /></div>
-        <p>({ this.props.meta.sallary })</p>
+        <p>{ this.props.meta.sallary }</p>
         <p>{ this.props.meta.description }</p>
       </div>
     );

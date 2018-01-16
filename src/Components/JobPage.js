@@ -3,65 +3,40 @@ import '../App.css';
 import Header from './JobHeader';
 import Job from './Job';
 
-import {initialJobs} from '../jobs';
-import {additionalJobs} from '../jobs';
-
 import AddJob from './AddJob';
 
 
+class JobPage extends Component {
 
-
-
-class App extends Component {
-
-  constructor() {
-    super();
-
-    this.state = {
-      jobs: initialJobs
-      // DO NOT USE CURL BRUCKETS FOR THIS
-    };
-    this.loadAdditionalJobs = this.loadAdditionalJobs.bind(this);
-    this.addJobToGallery = this.addJobToGallery.bind( this );
+  handleLoadAdditionalJobs = (e) => {
+    this.props.loadAdditionalJobs();
   }
 
-  loadAdditionalJobs() {
-    var currentJobs = { ...this.state.jobs };
-    var newJobs = Object.assign( currentJobs, additionalJobs );
-    this.setState({ jobs: newJobs });
-  }
-
-  addJobToGallery( job ) {
-    var ts = Date.now();
-    var newJob = {};
-    newJob[ 'job' + ts ] = job;
-    var currentJobs = { ...this.state.jobs };
-    var newJobs = Object.assign( currentJobs, newJob );
-    this.setState({ jobs: newJobs });
+  handleAddJobToGallery = (e) => {
+    this.props.addJobToGallery();
   }
 
   render() {
-    console.log(this.state.jobs)
+    console.log(this.props.jobs)
     return (
-
       <div className="App">
-        <Header text="Find Your new career here!" />
-        <p className="App-intro">To search for current job opportunities at MIT ...</p>
+      <Header text="Find Your new career here!" />
+      <p className="App-intro">To search for current job opportunities at MIT ...</p>
 
-        <div className="jobs">
-          {
-            Object
-            .keys(this.state.jobs)
-            .map(key => <Job key={key} meta={this.state.jobs[key]} />)
-          }
-        </div>
+      <div className="jobs">
+        {
+          Object
+          .keys(this.props.jobs)
+          .map(key => <Job key={key} meta={this.props.jobs[key]} />)
+        }
+      </div>
 
-        <div className="add-jobs"><button onClick={this.loadAdditionalJobs}>Load more...</button></div>
+      <div className="add-jobs"><button onClick={this.loadAdditionalJobs}>Load more...</button></div>
 
-        <AddJob addJob={this.addJobToGallery} />      </div>
-
+      <AddJob addJob={this.addJobToGallery} />
+      </div>
     );
   }
 }
 
-export default App;
+export default JobPage;

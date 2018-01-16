@@ -1,17 +1,36 @@
 import React, { Component } from 'react';
 import Header from '../Components/JobHeader';
+import Job from '../Components/Job';
 
 class JobDetails extends Component {
   render() {
-    return (
-        <div className="jobdetails">
-          <Header />
-          <h2>{ this.props.meta.title }</h2>
-          <p>({ this.props.meta.sallary })</p>
-          <p>{ this.props.meta.description }</p>
+    const { jobs } = this.props;
+    console.log('in JobDetails with: ', jobs)
 
-        </div>
-    );
+    const jobItems = () => {
+      return (
+        Object.keys(jobs)
+          .map(key => {
+            return (
+              <li key={1}>
+                <h2> {jobs[key].title} </h2>
+                <p> {jobs[key].sallary} </p>
+                <p> {jobs[key].description} </p>
+              </li>
+            )
+          })
+      )
     }
+
+
+    return (
+      <div className="jobdetails">
+        <Header />
+        <ul>
+          {jobItems()}
+        </ul>
+      </div>
+    );
+  }
 }
  export default JobDetails
