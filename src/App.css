@@ -28,3 +28,12 @@
   max-width: 600px;
   margin: 0 auto;
 }
+
+.mainpic_div{
+  text-align: center;
+}
+
+.mainpic{
+  width: 80vw;
+
+}
