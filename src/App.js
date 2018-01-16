@@ -24,23 +24,24 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Header from './Components/Header';
-import Top from './Components/Top';
+// import Header from './Components/Header';
+// import Top from './Components/Top';
 import Private from './Components/Private';
 import Login from './Auth/Login';
 import Logout from './Auth/Logout';
 import JobPage from './Components/JobPage';
+import JobDetails from './pages/JobDetails'
 
 const App = () => {
   return(
     <div>
-      <Header />
       <main>
         <Switch>
-        <Route exact path="/" component={Top} />
-        <Route path="/private" component={Private} />
-        <Route path="/login" component={Login} />
-        <Route path="logout" component={Logout} />
+          <Route exact path="/" component={JobPage} />
+          <Route path='/jobdetails' component={JobDetails} />
+          <Route path="/private" component={Private} />
+          <Route path="/login" component={Login} />
+          <Route path="logout" component={Logout} />
         </Switch>
       </main>
     </div>

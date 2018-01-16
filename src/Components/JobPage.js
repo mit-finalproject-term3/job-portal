@@ -15,8 +15,6 @@ import AddJob from './AddJob';
 class App extends Component {
 
   constructor() {
-
-
     super();
 
     this.state = {
@@ -27,29 +25,6 @@ class App extends Component {
     this.addJobToGallery = this.addJobToGallery.bind( this );
   }
 
-  render() {
-    return (
-
-      <div className="App">
-        <Header text="Find Your new career here!" />
-        <p className="App-intro">To search for current job opportunities at MIT ...</p>
-
-
-        <div className="jobs">
-          {
-            Object
-            .keys(this.state.jobs)
-            .map(key => <Job key={key} meta={this.state.jobs[key]} />)
-          }
-
-        </div>
-
-        <div className="add-jobs"><button onClick={this.loadAdditionalJobs}>Load more...</button></div>
-
-        <AddJob addJob={this.addJobToGallery} />      </div>
-
-    );
-  }
   loadAdditionalJobs() {
     var currentJobs = { ...this.state.jobs };
     var newJobs = Object.assign( currentJobs, additionalJobs );
@@ -63,6 +38,29 @@ class App extends Component {
     var currentJobs = { ...this.state.jobs };
     var newJobs = Object.assign( currentJobs, newJob );
     this.setState({ jobs: newJobs });
+  }
+
+  render() {
+    console.log(this.state.jobs)
+    return (
+
+      <div className="App">
+        <Header text="Find Your new career here!" />
+        <p className="App-intro">To search for current job opportunities at MIT ...</p>
+
+        <div className="jobs">
+          {
+            Object
+            .keys(this.state.jobs)
+            .map(key => <Job key={key} meta={this.state.jobs[key]} />)
+          }
+        </div>
+
+        <div className="add-jobs"><button onClick={this.loadAdditionalJobs}>Load more...</button></div>
+
+        <AddJob addJob={this.addJobToGallery} />      </div>
+
+    );
   }
 }
 
