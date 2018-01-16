@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Top = () => (
   <div>
     <h2>Top Page</h2>

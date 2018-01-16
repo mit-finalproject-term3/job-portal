@@ -7,11 +7,8 @@
   height: 80px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.top-nav {
+  background-color: #fff;
 }
 
 .App-title {
@@ -27,48 +24,7 @@
   to { transform: rotate(360deg); }
 }
 
-
-.App {
-  text-align: center;
-}
-
-.MITlogo{
-  float: left;
-  margin: 20px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
-/*IT company picture*/
-.mainpic{
-  clear: both;
-  margin-top: 70px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
-.mainpic_div{
-  clear: both;
-  text-align: center;
-}
-
-/*current opportunities*/
-.title{
-  background-color: #f23e2d; /* Red */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
-.container{
-  width: 50%;
-  margin: auto;
-  background-color: rgb(244, 84, 84) ;
+.post-job-form{
+  max-width: 600px;
+  margin: 0 auto;
 }
