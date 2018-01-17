@@ -10,7 +10,7 @@ Ali Asgari
 We would like to propose a custom job portal which the company can use to advertise available positions and accept applications from prospective candidates. I believe that this proposed job portal will allow the company to maintain all its job openings on a single platform which would be exposed via the website and also it will allow the candidate applications to be seamlessly managed.
 
 ## Website
-Please click here www.smh.com
+Please click here 
 
 
 
@@ -20,11 +20,11 @@ To create the user Story, we have used Trello
 DB designer software is used to create ERD.
 ## Wireframes
 Balsamiq is used to create wireframes
-Homepage
-Job application form
-Job descriptions page
-MIT Dashboard
-MIT login Page
+Homepage https://github.com/mit-finalproject-term3/job-portal/blob/sana/public/Home%20Page.png
+Job application form https://github.com/mit-finalproject-term3/job-portal/blob/sana/public/job%20application%20form.png
+Job descriptions page https://github.com/mit-finalproject-term3/job-portal/blob/sana/public/Home%20Page.png
+MIT Dashboard https://github.com/mit-finalproject-term3/job-portal/blob/sana/public/MIT%20Dashboard.png
+MIT login Page https://github.com/mit-finalproject-term3/job-portal/blob/sana/public/MIT%20login%20page.png
 
 ## Deployment
 Website is deployed through
