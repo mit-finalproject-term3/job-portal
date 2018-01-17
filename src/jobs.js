@@ -26,8 +26,8 @@
 //     }
 //   ]
 // };
-
-// some sample jobs
+//
+// // some sample jobs
 const initialJobs = {
   job1: {
     title: "Full stack developer",

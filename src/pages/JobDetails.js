@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../Components/JobHeader';
-import Job from '../Components/Job';
+// import Job from '../Components/Job';
 
 class JobDetails extends Component {
   render() {
