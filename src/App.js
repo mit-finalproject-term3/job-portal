@@ -48,7 +48,7 @@ const App = () => {
         </Switch>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
-        Ant Design ©2016 Created by Ant UED
+        MIT©2018
       </Footer>
     </Layout>
   )
