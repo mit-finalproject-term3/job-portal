@@ -1,5 +1,5 @@
-// const initialJobs = {
-//   data: [
+// const initialJobs =
+//   [
 //     {
 //       title: "Full stack developer",
 //       sallary: "100000",
@@ -25,7 +25,7 @@
 //       poster: "./posters/matilda.png"
 //     }
 //   ]
-// };
+// 
 //
 // // some sample jobs
 const initialJobs = {
