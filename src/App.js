@@ -25,6 +25,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Header from './Components/Header';
+import Contact from './Components/Contact';
 import Top from './Components/Top';
 import PostJob from './Components/PostJob';
 import Private from './Components/Private';
@@ -43,8 +44,9 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Top} />
           <Route path="/postjob" component={PostJob} />
+          <Route path="/contact" component={Contact}/>
           <Route path="/login" component={Login} />
-          <Route path="logout" component={Logout} />
+          <Route path="/logout" component={Logout} />
         </Switch>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
