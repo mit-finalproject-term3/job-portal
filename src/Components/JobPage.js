@@ -29,7 +29,8 @@ class JobPage extends Component {
             jobs ? (
               Object
                 .keys(jobs)
-                .map(key => <Job key={key} meta={jobs[key]} />)
+                .map(key => <Job key={key} job={jobs[key]} />)
+
             ) : ( null )
           }
         </div>
