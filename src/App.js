@@ -6,10 +6,10 @@ import Private from './Components/Private';
 import Login from './Auth/Login';
 import Logout from './Auth/Logout';
 import JobPage from './Components/JobPage';
-import JobDetails from './pages/JobDetails'
+import JobDetails from './pages/JobDetails';
 
-import {initialJobs} from './jobs';
-import {additionalJobs} from './jobs';
+// import {initialJobs} from './jobs';
+// import {additionalJobs} from './jobs';
 
 class App extends Component {
 
@@ -17,17 +17,40 @@ class App extends Component {
     super();
 
     this.state = {
-      jobs: initialJobs
+      // // Load fake data on page load
+      // jobs: initialJobs
+      jobs: null
     };
     // this.loadAdditionalJobs = this.loadAdditionalJobs.bind(this);
     // this.addJobToGallery = this.addJobToGallery.bind( this );
   }
 
-  loadAdditionalJobs = () => {
-    var currentJobs = { ...this.state.jobs };
-    var newJobs = Object.assign( currentJobs, additionalJobs );
-    this.setState({ jobs: newJobs });
+  componentDidMount() {
+
+    // Sends a request from the front-end via the proxy to the back-end at localhost:7000/jobs
+    fetch('/v1/jobs.json', {
+        method: 'GET',
+        // TODO - Add Headers with Token
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+      .then(res => {
+        return res.json();
+      })
+      .then(jobsData => {
+        console.log('Received jobsData object from the back-end', jobsData);
+        console.log('Get the array of jobs value from the jobs key in the jobsData object', jobsData.jobs);
+        this.setState({ jobs: jobsData.jobs });
+      })
+      .catch(error => { console.log(error) })
   }
+
+  // loadAdditionalJobs = () => {
+  //   var currentJobs = { ...this.state.jobs };
+  //   var newJobs = Object.assign( currentJobs, additionalJobs );
+  //   this.setState({ jobs: newJobs });
+  // }
 
   addJobToGallery = ( job ) => {
     var ts = Date.now();
@@ -49,8 +72,8 @@ class App extends Component {
               return (
                 <JobPage {...routeProps}
                   jobs={jobs}
-                  loadAdditionalJobs={this.loadAdditionalJobs}
-                  addJobToGallery={this.addJobToGallery}
+                  // loadAdditionalJobs={this.loadAdditionalJobs}
+                  // addJobToGallery={this.addJobToGallery}
                 />
               )
             }} />

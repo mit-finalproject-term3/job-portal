@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 class Job extends Component {
   render() {
-    console.log(this.props);
+    console.log('in Jobs component with props: ', this.props);
     return (
       <div className="job">
         <Link to='/jobdetails'>
