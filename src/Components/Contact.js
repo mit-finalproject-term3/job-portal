@@ -2,6 +2,8 @@ import React from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
 const FormItem = Form.Item;
 
+const { TextArea } = Input;
+
 const formItemLayout = {
   labelCol: { span: 4 },
   wrapperCol: { span: 8 },
@@ -38,33 +40,35 @@ class Contact extends React.Component {
           {getFieldDecorator('username', {
             rules: [{
               required: true,
-              message: 'Please input your name',
+              message: 'Please enter your name',
             }],
           })(
-            <Input placeholder="Please input your name" />
+            <Input placeholder="Please enter your name" />
           )}
         </FormItem>
-        <FormItem {...formItemLayout} label="Nickname">
+        <FormItem {...formItemLayout} label="Email">
           {getFieldDecorator('nickname', {
             rules: [{
               required: this.state.checkNick,
               message: 'Please input your nickname',
             }],
           })(
-            <Input placeholder="Please input your nickname" />
+            <Input placeholder="Please enter your Email" />
           )}
         </FormItem>
-        <FormItem {...formTailLayout}>
-          <Checkbox
-            value={this.state.checkNick}
-            onChange={this.handleChange}
-          >
-            Nickname is required
-          </Checkbox>
-        </FormItem>
+
+      <FormItem>
+        <div> 
+    <TextArea placeholder="comments" autosize />
+     <div style={{ margin: '10px 10px' }} />
+    
+   </div>
+  </FormItem>
+
+      
         <FormItem {...formTailLayout}>
           <Button type="primary" onClick={this.check}>
-            Check
+            Send
           </Button>
         </FormItem>
       </div>
