@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { List, Card } from 'antd';
 import { BackTop } from 'antd';
+import { Button } from 'antd';
 
 const data = [
    {
+     _id:1,
     title: "Full stack developer",
     sallary: "100000",
     description: "2 years experience necessary",
@@ -47,10 +49,10 @@ const Top = () => (
       renderItem={item => (
         <List.Item>
           <Card className="card" title={item.title}>
-          <p>sallary: {item.sallary}</p>
-          <p>description: {item.description}</p>
+          <h4>sallary:</h4><p>{item.sallary}</p>
+          <h4>description:</h4><p>{item.description}</p>
           <br/>
-          <Link to="/mainpage">details</Link>
+          <Button type="primary"><Link to="/mainpage">details</Link></Button>
           </Card>
         </List.Item>
       )}
@@ -60,3 +62,4 @@ const Top = () => (
 )
 
 export default Top;
+export {data};

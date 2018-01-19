@@ -27,7 +27,6 @@ import { Switch, Route } from 'react-router-dom';
 import Header from './Components/Header';
 import Top from './Components/Top';
 import PostJob from './Components/PostJob';
-import Private from './Components/Private';
 import Login from './Auth/Login';
 import Logout from './Auth/Logout';
 import {Layout} from 'antd';
@@ -54,4 +53,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
