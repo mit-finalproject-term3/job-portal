@@ -19,6 +19,9 @@ const header = () => (
         <Link to='/postjob'>Post Job</Link>
       </Menu.Item>
       <Menu.Item key="3">
+        <Link to='/contact'>Contact</Link>
+      </Menu.Item>
+      <Menu.Item key="3">
         {
           isAuthenticated() ? (<Link to='/logout'>Logout</Link>) : (<Link to='/login'>Login</Link>)
         }
