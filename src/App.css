@@ -29,3 +29,17 @@
   margin: 0 auto;
   margin-top: 4%;
 }
+
+.mainpic_div{
+  text-align: center;
+}
+
+.mainpic{
+  width: 80vw;
+}
+
+.card{
+  max-height: 260px;
+  padding-bottom: 20px;
+  overflow: scroll;
+}
