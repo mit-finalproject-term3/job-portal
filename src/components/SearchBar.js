@@ -26,8 +26,8 @@ class SearchBar extends Component {
       const isMatch =
         position.indexOf(this.refs.search.value.toLowerCase()) > -1 ||
         company.indexOf(this.refs.search.value.toLowerCase()) > -1;
-
       if (isMatch) return listing;
+      return false;
     });
   }
 
@@ -84,12 +84,11 @@ class SearchBar extends Component {
   }
 
   componentDidMount() {
-    this.setState({ sortedListing: this.props.allListings });
+    this.setState({ sortedListing: this.props.allListings || [] });
   }
 
   render() {
     const searchResults = this.renderResults();
-
     return (
       <div className="row search-container">
         <div className="col-9">

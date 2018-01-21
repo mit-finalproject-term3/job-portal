@@ -2,7 +2,7 @@ import 'whatwg-fetch';
 import { notification } from 'antd';
 import { push } from 'react-router-redux';
 import store from '../store';
-// const BaseUrl = 'https://a-junior-dev.herokuapp.com/v1/'
+const BaseUrl = 'http://localhost:9000/api'
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -43,7 +43,8 @@ export default function request(url, options) {
   if (newOptions.method === 'POST' || newOptions.method === 'PUT') {
     newOptions.body = JSON.stringify(newOptions.body);
   }
-  return fetch(url, newOptions)
+  
+  return fetch(`${BaseUrl}${url}`, newOptions)
     .then(checkStatus)
     .then(response => {
       if (newOptions.method === 'DELETE' || response.status === 204) {

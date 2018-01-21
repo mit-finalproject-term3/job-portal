@@ -19,6 +19,7 @@ export default class SideNav extends Component {
             className="icon"
             type="image"
             src="close.svg"
+            alt="button"
             onClick={this.onClose}
           />
           <Link to="/" className="side-nav-link" onClick={this.onClose}>
@@ -33,7 +34,7 @@ export default class SideNav extends Component {
           <Link to="/about" className="side-nav-link" onClick={this.onClose}>
             About
           </Link>
-          <Link to="/postajob" className="side-nav-link" onClick={this.onClose}>
+          <Link to="/postjob" className="side-nav-link" onClick={this.onClose}>
             Post A Job
           </Link>
         </div>
@@ -45,6 +46,7 @@ export default class SideNav extends Component {
         <input
           className="icon"
           type="image"
+          alt="button"
           src="close.svg"
           onClick={this.onClose}
         />

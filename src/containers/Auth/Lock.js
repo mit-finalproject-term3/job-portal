@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import Auth0Lock from 'auth0-lock';
 import { AUTH_CONFIG } from './auth0-variables';
 import {
   setAccessToken,
   setIdToken,
-  isLoggedIn
 } from '../../services/authService';
 
 class Lock extends Component {

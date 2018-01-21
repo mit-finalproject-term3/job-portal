@@ -1,4 +1,4 @@
-import { listingAdapter } from '../adapters/listingAdapter';
+import { listingAdapter } from '../services/listingAdapter';
 
 export const fetchAllListings = () => {
   const response = listingAdapter.fetchAllListings();

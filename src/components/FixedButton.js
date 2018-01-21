@@ -18,6 +18,7 @@ export default class FixedButton extends Component {
           className="fixed-button icon"
           id={this.props.id}
           type="image"
+          alt="button"
           src={this.props.source}
           onClick={this.onClick}
         />

@@ -3,9 +3,10 @@ import { Route } from 'react-router';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-class PrivateRouteContainer extends Component {
+class PrivateRoute extends Component {
   render() {
-    const { isAuthenticated, component: Component, ...props } = this.props;
+    const { component: Component, ...props } = this.props;
+    const {isAuthenticated} =  this.props.auth;
     return (
       <Route
         {...props}
@@ -15,7 +16,7 @@ class PrivateRouteContainer extends Component {
           ) : (
             <Redirect
               to={{
-                pathname: '/login',
+                pathname: '/',
                 state: { from: props.location }
               }}
             />
@@ -25,9 +26,5 @@ class PrivateRouteContainer extends Component {
     );
   }
 }
-
-const PrivateRoute = connect(state => ({
-  isAuthenticated: state.auth.isAuthenticated
-}))(PrivateRouteContainer);
 
 export default PrivateRoute;

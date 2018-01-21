@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 import { push } from 'react-router-redux';
+import store from './store';
 import FixedButton from './components/FixedButton';
 import SideNav from './components/SideNav';
+import SearchPage from './components/SearchPage'
+import PostAJob from './components/PostAJob';
+import AboutPage from './components/AboutPage'
+//import PrivateRoute from './containers/PrivateRoute';
 
+const {dispatch} =  store;
 class App extends Component {
   constructor() {
     super();
@@ -16,10 +23,23 @@ class App extends Component {
   }
 
   redirectToPostJobListing() {
-    push('/postajob');
+    dispatch(push('/postjob'));
   }
 
+  goTo(route) {
+    this.props.history.replace(`/${route}`)
+  }
+
+  login() {
+    this.props.auth.login();
+  }
+
+  logout() {
+    this.props.auth.logout();
+  }
   render() {
+    const {match} = this.props;
+    //const { isAuthenticated } = this.props.auth;
     return (
       <div className="App">
         <FixedButton
@@ -35,10 +55,16 @@ class App extends Component {
         />
         <h3 className="black-logo-title">
           <Link className="black" to="/home">
-            A JUNIOR DEV
+            MIT
           </Link>
         </h3>
-        <div className="grid">{this.props.children}</div>
+        <div className="grid">
+          <Switch>
+            <Route path={match.path} exact component={SearchPage} />
+            <Route path="/postjob" component={PostAJob} />
+            <Route path="/about" component={AboutPage} />
+          </Switch>
+        </div>
       </div>
     );
   }
