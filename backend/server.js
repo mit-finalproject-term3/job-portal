@@ -2,12 +2,12 @@ import express from 'express';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-import router from './router';
+import router from './routes/jobs';
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost/jobs');
 
-// Initialize http server
+//Initialize http server
 const app = express();
 
 app.use(bodyParser.json());
@@ -18,10 +18,19 @@ app.use(function(req, res, next) {
   next();
 });
 
-// Logger that outputs all requests into the console
+//Logger that outputs all requests into the console
 app.use(morgan('combined'));
-// Use v1 as prefix for all API endpoints
-app.use('/v1', router);
+//Use v1 as prefix for all API endpoints
+app.use('/', router);
+
+app.get('/', (req, res) => {
+  res.json({
+    resources: [{
+      jobs: '/jobs'
+    }]
+  })
+});
+
 
 const server = app.listen(7000, () => {
   const { address, port } = server.address();

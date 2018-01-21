@@ -1,21 +1,13 @@
 import React, { Component } from 'react';
 import '../App.css';
-import Header from './JobHeader';
-import Job from './Job';
+import Header from '../Components/JobHeader';
+import Job from '../Components/Job';
 
-import AddJob from './AddJob';
+
+
 
 
 class JobPage extends Component {
-
-  handleLoadAdditionalJobs = (e) => {
-    this.props.loadAdditionalJobs();
-  }
-
-  handleAddJobToGallery = (e) => {
-    this.props.addJobToGallery();
-  }
-
   render() {
     console.log(this.props.jobs)
     const { jobs } = this.props;
@@ -34,10 +26,9 @@ class JobPage extends Component {
             ) : ( null )
           }
         </div>
+        <div className="add-jobs"><button onClick={this.loadAdditionalJobs}>Load more...</button></div>
 
-         <div className="add-jobs"><button onClick={this.loadAdditionalJobs}>Load more...</button></div>
 
-        <AddJob addJob={this.addJobToGallery} />
       </div>
     );
   }

@@ -21,8 +21,6 @@ class JobDetails extends Component {
           })
       )
     }
-
-
     return (
       <div className="jobdetails">
         <Header />

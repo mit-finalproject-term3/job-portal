@@ -10,3 +10,7 @@ var jobSchema = new Schema({
 
 // Export Mongoose model
 export default mongoose.model('job', jobSchema);
+
+const Job = mongoose.model('Job', jobSchema);
+
+module.exports = Job;

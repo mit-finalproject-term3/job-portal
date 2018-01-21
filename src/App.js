@@ -6,8 +6,9 @@ import Private from './Components/Private';
 import Login from './Auth/Login';
 import Logout from './Auth/Logout';
 import Job from './Components/Job';
-import JobPage from './Components/JobPage';
-import JobDetails from './pages/JobDetails';
+import JobPage from './pages/JobPage';
+import JobForm from './pages/JobForm';
+import * as jobsAPI from './api/jobs'
 
 // import {initialJobs} from './jobs';
 // import {additionalJobs} from './jobs';
@@ -28,8 +29,8 @@ class App extends Component {
 
   componentDidMount() {
 
-    // Sends a request from the front-end via the proxy to the back-end at localhost:7000/jobs
-    fetch('/v1/jobs.json', {
+    //Sends a request from the front-end via the proxy to the back-end at localhost:7000/jobs
+    fetch('/jobs.json', {
       method: 'GET',
       // TODO - Add Headers with Token
       headers: {
@@ -47,19 +48,21 @@ class App extends Component {
     .catch(error => { console.log(error) })
   }
 
+
   // loadAdditionalJobs = () => {
   //   var currentJobs = { ...this.state.jobs };
   //   var newJobs = Object.assign( currentJobs, additionalJobs );
   //   this.setState({ jobs: newJobs });
   // }
 
-  addJobToGallery = ( job ) => {
-    var ts = Date.now();
-    var newJob = {};
-    newJob[ 'job' + ts ] = job;
-    var currentJobs = { ...this.state.jobs };
-    var newJobs = Object.assign( currentJobs, newJob );
-    this.setState({ jobs: newJobs });
+
+  handleJobSubmission = (job) => {
+    console.log('in parent App.js handleJobSubmission aboout to set state ')
+    this.setState(({jobs})=>(
+      {jobs:[ job ].concat(jobs) }
+    ));
+    jobsAPI.save(job);
+
   }
 
   render() {
@@ -72,12 +75,9 @@ class App extends Component {
             !!jobs ? (
               <Switch>
                 <Route exact path="/" render={routeProps => {
+                  console.log('loading the root route')
                   return (
-                    <JobPage
-                      jobs={jobs}
-                    // loadAdditionalJobs={this.loadAdditionalJobs}
-                    // addJobToGallery={this.addJobToGallery}
-                    />
+                    <JobPage jobs={jobs} />
                   )
                 }} />
 
@@ -97,12 +97,15 @@ class App extends Component {
 
                 <Route path="/private" component={Private} />
                 <Route path="/login" component={Login} />
-                <Route path="logout" component={Logout} />
+                <Route path="/logout" component={Logout} />
 
               </Switch>
             ) : ( "Loading Jobs..." )
           }
+            <JobForm onSubmit={this.handleJobSubmission}/>
+
         </main>
+
       </div>
     )
   }
