@@ -1,59 +1,47 @@
-// import React, { Component } from 'react';
-// import logo from './logo.svg';
-// import './App.css';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { push } from 'react-router-redux';
+import FixedButton from './components/FixedButton';
+import SideNav from './components/SideNav';
 
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <h1 className="App-title">Welcome to React</h1>
-//         </header>
-//         <p className="App-intro">
-//           To get started, edit <code>src/App.js</code> and save to reload.
-//         </p>
-//       </div>
-//     );
-//   }
-// }
+class App extends Component {
+  constructor() {
+    super();
 
-// export default App;
+    this.openSideMenu = this.openSideMenu.bind(this);
+  }
 
+  openSideMenu() {
+    document.getElementById('side-nav').style.width = '26em';
+  }
 
+  redirectToPostJobListing() {
+    push('/postajob');
+  }
 
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Header from './Components/Header';
-import Contact from './Components/Contact';
-import Top from './Components/Top';
-import PostJob from './Components/PostJob';
-import Private from './Components/Private';
-import Login from './Auth/Login';
-import Logout from './Auth/Logout';
-import {Layout} from 'antd';
-import './App.css';
-
-const {Content, Footer} =  Layout;
-
-const App = () => {
-  return(
-    <Layout className="layout">
-      <Header/>
-      <Content style={{ padding: '0 50px' }}>
-        <Switch>
-          <Route exact path="/" component={Top} />
-          <Route path="/postjob" component={PostJob} />
-          <Route path="/contact" component={Contact}/>
-          <Route path="/login" component={Login} />
-          <Route path="/logout" component={Logout} />
-        </Switch>
-      </Content>
-      <Footer style={{ textAlign: 'center' }}>
-        MIT©2018
-      </Footer>
-    </Layout>
-  )
+  render() {
+    return (
+      <div className="App">
+        <FixedButton
+          id="navbar-menu-button"
+          source="navbar-menu.png"
+          callback={this.openSideMenu}
+        />
+        <SideNav />
+        <FixedButton
+          id="post-listing"
+          source="upload.svg"
+          callback={this.redirectToPostJobListing}
+        />
+        <h3 className="black-logo-title">
+          <Link className="black" to="/home">
+            A JUNIOR DEV
+          </Link>
+        </h3>
+        <div className="grid">{this.props.children}</div>
+      </div>
+    );
+  }
 }
 
-export default App
+export default App;
