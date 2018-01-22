@@ -1,46 +1,16 @@
-<<<<<<< HEAD
-
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Header from './Components/Header';
-import Top from './Components/Top';
-import Private from './Components/Private';
-import Login from './Auth/Login';
-import Logout from './Auth/Logout';
-import './App.css';
-
-const App = () => {
-  return(
-    <div>
-      <img src="MITlogo.png" alt="logo" className="MITlogo" />
-      <Header />
-      <main>
-        <Switch>
-        <Route exact path="/" component={Top} />
-        <Route path="/private" component={Private} />
-        <Route path="/login" component={Login} />
-        <Route path="logout" component={Logout} />
-        </Switch>
-      </main>
-    </div>
-  )
-}
-
-export default App
-=======
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { push } from 'react-router-redux';
 import store from './store';
 import FixedButton from './components/FixedButton';
 import SideNav from './components/SideNav';
-import SearchPage from './components/SearchPage'
+import SearchPage from './components/SearchPage';
 import PostAJob from './components/PostAJob';
-import AboutPage from './components/AboutPage'
+import AboutPage from './components/AboutPage';
 //import PrivateRoute from './containers/PrivateRoute';
 
-const {dispatch} =  store;
+const { dispatch } = store;
 class App extends Component {
   constructor() {
     super();
@@ -57,7 +27,7 @@ class App extends Component {
   }
 
   goTo(route) {
-    this.props.history.replace(`/${route}`)
+    this.props.history.replace(`/${route}`);
   }
 
   login() {
@@ -68,7 +38,7 @@ class App extends Component {
     this.props.auth.logout();
   }
   render() {
-    const {match} = this.props;
+    const { match } = this.props;
     //const { isAuthenticated } = this.props.auth;
     return (
       <div className="App">
@@ -101,4 +71,3 @@ class App extends Component {
 }
 
 export default App;
->>>>>>> 6aa9119ec0e321cc40e8cb40a865d55eec1b9804
