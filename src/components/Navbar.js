@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Menu, Row, Col } from 'antd';
 import Logo from '../logo.png';
 
-
 export default class Navbar extends Component {
   render() {
     return (
@@ -31,6 +30,9 @@ export default class Navbar extends Component {
               </Menu.Item>
               <Menu.Item key="3">
                 <Link to="/postajob">Post A Job</Link>
+              </Menu.Item>
+              <Menu.Item key="4">
+                <Link to="/contact">Contact</Link>
               </Menu.Item>
             </Menu>
           </Col>

@@ -9,6 +9,7 @@ import store from './store';
 import SearchPage from './components/SearchPage';
 import PostAJob from './components/PostAJob';
 import AboutPage from './components/AboutPage';
+import Contact from './components/Contact';
 import './App.css';
 //import PrivateRoute from './containers/PrivateRoute';
 
@@ -42,6 +43,7 @@ class App extends Component {
             <Route path="/about" component={AboutPage} />
             <Route path="/postajob" component={PostAJob} />
             <Route path="/mainpage" component={Mainpage} />
+            <Route path="/contact" component={Contact} />
           </Switch>
         </div>
       </div>
