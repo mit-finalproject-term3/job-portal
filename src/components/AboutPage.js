@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import { Divider } from 'antd';
 
 export default class AboutPage extends Component {
   render() {
     return (
       <div>
-        <h1 className="heading">About</h1>
-        <p className="justify">
+        <Divider>
+          <h1>About</h1>
+        </Divider>
+        <p>
           Macquarie IT is an Australian technology company that solves complex
           business problems by creating mobile and digital products, which
           improve people’s lives. Macquarie IT is unique in the way we combine
@@ -26,23 +29,6 @@ export default class AboutPage extends Component {
           there is in the world today. Our approach is based on in-depth
           industry knowledge and scientific research.
         </p>
-
-        <div className="space" />
-
-        <h1 className="heading">Navigation Help</h1>
-        <p className="justify">
-          I hope this site hasn't been too difficult to navigate. If for some
-          reason you had trouble hopefully some of the information below helps.
-          If you'd like to contact me, you can find my contact information at
-          the bottom of this page.
-        </p>
-        <div className="small-space" />
-
-
-        <div className="space" />
-
-        <h1 className="heading">Contact</h1>
-        <div className="large-space" />
       </div>
     );
   }

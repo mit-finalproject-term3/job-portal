@@ -7,21 +7,12 @@ class PostAJob extends Component {
     super();
     this.state = {
       listing: {
-        listing: {
-          position: '',
-          shift: 'full-time',
-          company: '',
-          company_url: '',
-          apply_url: '',
-          experience_level: 'intern',
-          programming_languages: '',
-          compensation: '',
-          street: '',
-          city: 'New York',
-          state: 'NY',
-          zipcode: '',
-          description: ''
-        }
+        title: '',
+        type: 'full-time',
+        level_of_experience: 'intern',
+        programming_lang: '',
+        location: 'Sydney',
+        description: ''
       }
     };
 
@@ -32,22 +23,14 @@ class PostAJob extends Component {
   handleChange(event) {
     const field = event.target.name;
     const listing = this.state.listing;
-    listing['listing'][field] = event.target.value;
+    listing[field] = event.target.value;
     return this.setState({ listing });
   }
 
   submitListing(event) {
     event.preventDefault();
-    this.pleaseDeleteMe();
     let listing = this.state.listing;
     this.props.createListing(listing);
-  }
-
-  pleaseDeleteMe() {
-    let listing = this.state.listing;
-    listing['listing']['apply_url'] = this.state.listing.listing.company_url;
-    this.setState({ listing });
-    console.log(this.state.listing);
   }
 
   render() {
@@ -64,14 +47,14 @@ class PostAJob extends Component {
                 <label>Type</label>
                 <select
                   className="fill"
-                  name="shift"
+                  name="type"
                   onChange={this.handleChange}
                 >
-                  <option value="full-time">Full-time 60 days</option>
-                  <option value="part-time">Part-time 30 days</option>
-                  <option value="contract">Contract 45 days</option>
+                  <option value="full-time">Full time</option>
+                  <option value="part-time">Part time</option>
+                  <option value="contract">Contract</option>
                   <option value="entry">
-                    Internship/junior full-time/part-time 45 days
+                    Internship/junior full-time/part-time
                   </option>
                 </select>
               </div>
@@ -83,7 +66,7 @@ class PostAJob extends Component {
                 <input
                   className="fill"
                   type="text"
-                  name="position"
+                  name="title"
                   onChange={this.handleChange}
                 />
               </div>
@@ -95,7 +78,7 @@ class PostAJob extends Component {
                 <input
                   className="fill"
                   type="text"
-                  name="programming_languages"
+                  name="programming_lang"
                   onChange={this.handleChange}
                 />
               </div>
@@ -106,7 +89,7 @@ class PostAJob extends Component {
                 <label>Level of Experience</label>
                 <select
                   className="fill"
-                  name="experience_level"
+                  name="level_of_experience"
                   onChange={this.handleChange}
                 >
                   <option value="intern">Intern (0 yrs of experience)</option>
@@ -125,7 +108,7 @@ class PostAJob extends Component {
                 <label>Compensation</label>
                 <input
                   className="fill"
-                  type="text"
+                  type="number"
                   name="compensation"
                   placeholder="Compensation"
                   onChange={this.handleChange}
@@ -143,83 +126,6 @@ class PostAJob extends Component {
                   placeholder="Description"
                   onChange={this.handleChange}
                 />
-              </div>
-            </div>
-
-            <label>How to Apply</label>
-
-            <div className="row">
-              <div className="col-12">
-                <select className="fill" name="">
-                  <option value="true">From us (recommended)</option>
-                  <option value="false">From you (enter URL)</option>
-                </select>
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col-12">
-                <input
-                  className="fill"
-                  type="text"
-                  name="company"
-                  placeholder="Company"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col-12">
-                <input
-                  className="fill"
-                  type="text"
-                  name="company_url"
-                  placeholder="Company URL"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col-12">
-                <input
-                  className="fill"
-                  type="text"
-                  name="street"
-                  placeholder="Street"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col-12">
-                <input
-                  className="fill"
-                  type="text"
-                  name="zipcode"
-                  placeholder="Zipcode"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col-1">
-                <input className="fill" type="checkbox" />
-              </div>
-              <div className="col-11">
-                <p>E-mail to Weekly Newsletter</p>
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col-1">
-                <input className="fill" type="checkbox" />
-              </div>
-              <div className="col-11">
-                <p>Terms & Agreements</p>
               </div>
             </div>
 

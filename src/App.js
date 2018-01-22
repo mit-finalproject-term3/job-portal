@@ -1,24 +1,16 @@
-import Navbar from './Components/Navbar';
-import Top from './Components/Top';
-import Mainpage from './Components/Mainpage';
-import './App.css';
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import { push } from 'react-router-redux';
+import Navbar from './components/Navbar';
+import Mainpage from './components/Mainpage';
 import store from './store';
 
-import FixedButton from './components/FixedButton';
-import SideNav from './components/SideNav';
+// import SideNav from './components/SideNav';
 import SearchPage from './components/SearchPage';
 import PostAJob from './components/PostAJob';
 import AboutPage from './components/AboutPage';
-
+import './App.css';
 //import PrivateRoute from './containers/PrivateRoute';
-
-import SearchPage from './Components/SearchPage';
-import PostAJob from './Components/PostAJob';
-import AboutPage from './Components/AboutPage';
 
 const { dispatch } = store;
 class App extends Component {
@@ -42,25 +34,9 @@ class App extends Component {
     //const { isAuthenticated } = this.props.auth;
     return (
       <div className="App">
-        <FixedButton
-          id="navbar-menu-button"
-          source="navbar-menu.png"
-          callback={this.openSideMenu}
-        />
-        <FixedButton
-          id="post-listing"
-          source="upload.svg"
-          callback={this.redirectToPostJobListing}
-        />
-
         <Navbar />
 
-        <h3 className="black-logo-title">
-          <Link className="black" to="/home">
-            MIT
-          </Link>
-        </h3>
-        <div className="grid">
+        <div className="content-wrapper">
           <Switch>
             <Route path={match.path} exact component={SearchPage} />
             <Route path="/about" component={AboutPage} />

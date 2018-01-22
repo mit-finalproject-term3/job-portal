@@ -21,41 +21,38 @@ class SearchBar extends Component {
 
   getSearchQuery(allListings) {
     return allListings.filter((listing, i) => {
-      const position = listing.position.toLowerCase();
-      const company = listing.company.toLowerCase();
+      const title = listing.title.toLowerCase();
+      const programming_lang = listing.programming_lang.toLowerCase();
       const isMatch =
-        position.indexOf(this.refs.search.value.toLowerCase()) > -1 ||
-        company.indexOf(this.refs.search.value.toLowerCase()) > -1;
+        title.indexOf(this.refs.search.value.toLowerCase()) > -1 ||
+        programming_lang.indexOf(this.refs.search.value.toLowerCase()) > -1;
       if (isMatch) return listing;
       return false;
     });
   }
 
   renderResults() {
-    if (this.state.sortedListing.length === 0) return null;
-
+    const {sortedListing} =  this.state;
+    const { allListings} =  this.props;
+    let listings = sortedListing;
+    if (listings.length === 0) {
+      listings = allListings;
+    }
     return (
       <div className="row">
-        {this.state.sortedListing.map((listing, i) => {
+        {listings.map((listing, i) => {
           return (
             <div key={i} className="col-12 card">
               <div className="row">
                 <div className="col-12">
                   <h2>
-                    {listing.position} at {listing.company}
+                    {listing.title}
                   </h2>
                   <h4>
-                    {listing.street}, {listing.city} {listing.state}{' '}
-                    {listing.zipcode} - {listing.shift} - ${
-                      listing.compensation
-                    }
+                    {listing.location} - {listing.type} - ${listing.compensation}
                   </h4>
-                  <p className="justify">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Duis vestibulum enim vitae pellentesque fringilla. Vivamus
-                    eleifend faucibus ipsum, nec rutrum nulla imperdiet lacinia.
-                    Phasellus euismod enim sit amet ante luctus, in rhoncus arcu
-                    egestas. Integer eu tempor quam. Fusce nec ante tellus.
+                  <p>
+                    {listing.description}
                   </p>
                 </div>
               </div>
@@ -64,11 +61,6 @@ class SearchBar extends Component {
                 <div className="col-3">
                   <a href={listing.company_url} target="_blank">
                     <button className="fill primary">Apply</button>
-                  </a>
-                </div>
-                <div className="col-3">
-                  <a href={listing.company_url} target="_blank">
-                    <button className="fill">Site</button>
                   </a>
                 </div>
               </div>

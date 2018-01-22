@@ -12,7 +12,6 @@ export const listingAdapter = {
       method: 'POST',
       body: listing
     }).then(response => {
-      console.log('response listing');
       store.dispatch(push('/'));
       return response;
     });

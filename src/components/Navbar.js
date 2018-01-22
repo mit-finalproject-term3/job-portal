@@ -1,48 +1,41 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Layout, Menu } from 'antd';
-const { Header } = Layout;
+import { Menu, Row, Col } from 'antd';
+import Logo from '../logo.png';
+
 
 export default class Navbar extends Component {
   render() {
-    if (!!sessionStorage.jwt) {
-      return (
-        <div id="top-nav">
-          <input
-            className="icon"
-            type="image"
-            src="close.svg"
-            alt="button"
-            onClick={this.onClose}
-          />
-          <Link to="/">Home</Link>
-          <Link to="/">Profile</Link>
-          <Link to="/">Edit</Link>
-          <Link to="/about">About</Link>
-          <Link to="/postajob">Post A Job</Link>
-        </div>
-      );
-    }
-
     return (
-      <Header>
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={['1']}
-          style={{ lineHeight: '64px', padding: '15px' }}
-        >
-          <Menu.Item key="1">
-            <Link to="/">Home</Link>
-          </Menu.Item>
-          <Menu.Item key="2">
-            <Link to="/about">About</Link>
-          </Menu.Item>
-          <Menu.Item key="3">
-            <Link to="/postajob">Post A Job</Link>
-          </Menu.Item>
-        </Menu>
-      </Header>
+      <header id="header" className="clearfix">
+        <Row>
+          <Col xxl={4} xl={5} lg={5} md={6} sm={24} xs={24}>
+            <Link to="/" id="logo">
+              <img alt="logo" src={Logo} />
+            </Link>
+          </Col>
+          <Col xxl={18} xl={17} lg={17} md={16} sm={0} xs={0}>
+            <Menu
+              theme="dark"
+              className="menu-site"
+              id="nav"
+              mode="horizontal"
+              defaultSelectedKeys={['1']}
+              style={{ lineHeight: '64px', padding: '15px' }}
+            >
+              <Menu.Item key="1">
+                <Link to="/">Home</Link>
+              </Menu.Item>
+              <Menu.Item key="2">
+                <Link to="/about">About</Link>
+              </Menu.Item>
+              <Menu.Item key="3">
+                <Link to="/postajob">Post A Job</Link>
+              </Menu.Item>
+            </Menu>
+          </Col>
+        </Row>
+      </header>
     );
   }
 }
