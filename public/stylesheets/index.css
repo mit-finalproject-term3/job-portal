@@ -150,9 +150,14 @@ button:hover {
   }
 }
 .justify {
-  color: #800000;
+  color: #000080;
   font-style: normal;
   font-weight: bold;
-   
+
+
+}
+.headingAboutpage{
+  color: #800000;
+  font-weight: bold;
 
 }

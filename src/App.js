@@ -7,15 +7,6 @@ import { Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { push } from 'react-router-redux';
 import store from './store';
-
-import FixedButton from './components/FixedButton';
-import SideNav from './components/SideNav';
-import SearchPage from './components/SearchPage';
-import PostAJob from './components/PostAJob';
-import AboutPage from './components/AboutPage';
-
-//import PrivateRoute from './containers/PrivateRoute';
-
 import SearchPage from './Components/SearchPage';
 import PostAJob from './Components/PostAJob';
 import AboutPage from './Components/AboutPage';
@@ -42,22 +33,10 @@ class App extends Component {
     //const { isAuthenticated } = this.props.auth;
     return (
       <div className="App">
-        <FixedButton
-          id="navbar-menu-button"
-          source="navbar-menu.png"
-          callback={this.openSideMenu}
-        />
-        <FixedButton
-          id="post-listing"
-          source="upload.svg"
-          callback={this.redirectToPostJobListing}
-        />
-
         <Navbar />
-
         <h3 className="black-logo-title">
           <Link className="black" to="/home">
-            MIT
+            <img src="MITlogo.png" alt="logo" className="MITlogo" />
           </Link>
         </h3>
         <div className="grid">
