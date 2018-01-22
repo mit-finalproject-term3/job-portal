@@ -7,9 +7,12 @@
   height: 80px;
 }
 
-.top-nav {
-  background-color: #fff;
-}
+/*.top-nav {
+  background: #fff;
+  padding: 24px;
+  min-height: 280px;
+  margin: 16px 24px 16px 0;
+}*/
 
 .App-title {
   font-size: 1.5em;
@@ -20,27 +23,38 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.post-job-form{
+.post-job-form {
   max-width: 600px;
   margin: 0 auto;
   margin-top: 4%;
 }
 
-.mainpic_div{
+.mainpic_div {
   text-align: center;
 }
 
-.mainpic{
+.mainpic {
   height: 30vw;
   /*width: 80vw;*/
 }
 
-.card{
+.card {
   max-height: 300px;
   padding-bottom: 20px;
   overflow: scroll;
+}
+
+.MITlogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
 }

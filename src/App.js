@@ -1,62 +1,60 @@
-// import React, { Component } from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <h1 className="App-title">Welcome to React</h1>
-//         </header>
-//         <p className="App-intro">
-//           To get started, edit <code>src/App.js</code> and save to reload.
-//         </p>
-//       </div>
-//     );
-//   }
-// }
-
-// export default App;
-
-
-
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Header from './Components/Header';
-import Contact from './Components/Contact';
+import Navbar from './Components/Navbar';
 import Top from './Components/Top';
-import PostJob from './Components/PostJob';
+// import PostJob from './Components/PostJob';
 import Mainpage from './Components/Mainpage';
-
-import Login from './Auth/Login';
-import Logout from './Auth/Logout';
-import {Layout} from 'antd';
+// import Login from './Auth/Login';
+// import Logout from './Auth/Logout';
 import './App.css';
 
-const {Content, Footer} =  Layout;
+import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { push } from 'react-router-redux';
+import store from './store';
+import SearchPage from './Components/SearchPage';
+import PostAJob from './Components/PostAJob';
+import AboutPage from './Components/AboutPage';
+//import PrivateRoute from './containers/PrivateRoute';
 
-const App = () => {
-  return(
-    <Layout className="layout">
-      <Header/>
-      <Content style={{ padding: '0 50px' }}>
-        <Switch>
-          <Route exact path="/" component={Top} />
-          <Route path="/postjob" component={PostJob} />
-          <Route path="/contact" component={Contact}/>
-          <Route path="/login" component={Login} />
-          <Route path="/logout" component={Logout} />
-          <Route path="/mainpage" component={Mainpage} />
+const { dispatch } = store;
+class App extends Component {
+  redirectToPostJobListing() {
+    dispatch(push('/postjob'));
+  }
 
-        </Switch>
-      </Content>
-      <Footer style={{ textAlign: 'center' }}>
-        MIT©2018
-      </Footer>
-    </Layout>
-  )
+  goTo(route) {
+    this.props.history.replace(`/${route}`);
+  }
+
+  login() {
+    this.props.auth.login();
+  }
+
+  logout() {
+    this.props.auth.logout();
+  }
+  render() {
+    const { match } = this.props;
+    //const { isAuthenticated } = this.props.auth;
+    return (
+      <div className="App">
+        <Navbar />
+        <h3 className="black-logo-title">
+          <Link className="black" to="/home">
+            MIT
+          </Link>
+        </h3>
+        <div className="grid">
+          <Switch>
+            <Route path={match.path} exact component={SearchPage} />
+            <Route path="/about" component={AboutPage} />
+            <Route path="/postajob" component={PostAJob} />
+            <Route path="/mainpage" component={Mainpage} />
+          </Switch>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
