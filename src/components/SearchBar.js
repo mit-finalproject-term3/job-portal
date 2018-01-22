@@ -55,7 +55,7 @@ class SearchBar extends Component {
                     Duis vestibulum enim vitae pellentesque fringilla. Vivamus
                     eleifend faucibus ipsum, nec rutrum nulla imperdiet lacinia.
                     Phasellus euismod enim sit amet ante luctus, in rhoncus arcu
-                    egestas. Integer eu tempor quam. Fusce nec ante tellus.
+                    egestas. Integer eu tempor quam. Fusce nec ante tellus
                   </p>
                 </div>
               </div>
