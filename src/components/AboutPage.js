@@ -6,16 +6,27 @@ export default class AboutPage extends Component {
       <div>
         <h1 className="heading">About</h1>
         <p className="justify">
-          Sometimes you just wish that people would actually post some
-          Internships, Entry or Junior level positions to apply. You wish that
-          job boards wouldn't be filled with only Mid and above level engineers
-          or even worse, Junior positions that require you to have 3+ years
-          experience, because filtering unskilled talent by saying 3+ years
-          isn't an excuse. Because talent that haven't gotten their foot in the
-          door yet, are also filtered. If things like those resonates with you.
-          Then welcome, because this is a site that welcomes you. The talented,
-          the skilled, the overshadowed.
+          Macquarie IT is an Australian technology company that solves complex
+          business problems by creating mobile and digital products, which
+          improve people’s lives. Macquarie IT is unique in the way we combine
+          world-leading UI/UX design and front-end development expertise with
+          complex back-end technical integration capability to deliver
+          large-scale consumer and enterprise digital solutions for leading
+          companies. Founded in 2012, our services include building and
+          management of systems that provide the overall web & mobile
+          infrastructure, building successful applications, combines intelligent
+          automation with powerful lead generation, e-commerce and social media
+          strategies. Everything we do is aligned with our goal to help our
+          partners succeed with the help of technology. We have the forward
+          thinkers, the engineers and the creative minds. We have the skills,
+          the experience and the passion. We understand the consumer
+          demographics and we are always up to date with the latest trends. We
+          manage each business engagement based on the best project management,
+          programming, internet marketing, usability and persuasion know-how
+          there is in the world today. Our approach is based on in-depth
+          industry knowledge and scientific research.
         </p>
+
         <div className="space" />
 
         <h1 className="heading">Navigation Help</h1>
@@ -27,23 +38,7 @@ export default class AboutPage extends Component {
         </p>
         <div className="small-space" />
 
-        <h3>Search Bar</h3>
-        <p className="justify">
-          Type a keyword in the search bar in the homepage. This will allow you
-          to sort through job listings. Good Luck on your job search!
-        </p>
-        <div className="small-space" />
 
-        <h3>Main Floating Buttons</h3>
-        <p className="justify">
-          The top left button is the menu button. Pressing the menu button will
-          slide in a menu for additional options.
-        </p>
-        <p className="justify">
-          The second top left button is the job post button. Pressing the post
-          button will allow you to post a job onto the job board. People with
-          talent will then see your job post and apply.
-        </p>
         <div className="space" />
 
         <h1 className="heading">Contact</h1>
