@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class AboutPage extends Component {
   render() {
     return (
-      <div>
+      <div className="">
         <h1 className="heading">About</h1>
         <p className="justify">
           Macquarie IT is an Australian technology company that solves complex
