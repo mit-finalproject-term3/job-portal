@@ -41,6 +41,9 @@ export default class Navbar extends Component {
           <Menu.Item key="3">
             <Link to="/postajob">Post A Job</Link>
           </Menu.Item>
+          <Menu.Item key="4">
+            <Link to="/contact">Contact</Link>
+          </Menu.Item>
         </Menu>
       </Header>
     );
