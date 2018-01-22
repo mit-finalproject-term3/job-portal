@@ -1,6 +1,9 @@
-.MITlogo{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 10%;
+.MITlogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+}
+.justify {
+  color: red;
 }
