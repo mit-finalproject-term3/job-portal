@@ -10,7 +10,7 @@ const router = express.Router();
 router.route('/jobs.json')
   .get(index);
 
-router.post('/', (req, res) => {
+router.post('/jobs.json', (req, res) => {
   Job.create(req.body)
     .then((job) => {
       res.status(201).json(job).end();

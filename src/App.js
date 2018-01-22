@@ -102,8 +102,8 @@ class App extends Component {
               </Switch>
             ) : ( "Loading Jobs..." )
           }
-            <JobForm onSubmit={this.handleJobSubmission}/>
 
+            <JobForm onSubmit={this.handleJobSubmission}/>
         </main>
 
       </div>

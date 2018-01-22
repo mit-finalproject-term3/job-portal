@@ -5,7 +5,7 @@ var jobSchema = new Schema({
   title: String,
   sallary: String,
   description: String,
-  poster: String
+  //poster: String
 });
 
 // Export Mongoose model
