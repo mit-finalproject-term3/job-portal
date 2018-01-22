@@ -19,12 +19,17 @@ To create the user Story, we have used Trello
 ## ERD
 DB designer software is used to create ERD.
 ## Wireframes
-Balsamiq is used to create wireframes
-Homepage https://github.com/mit-finalproject-term3/job-portal/blob/sana/public/Home%20Page.png
-Job application form https://github.com/mit-finalproject-term3/job-portal/blob/sana/public/job%20application%20form.png
-Job descriptions page https://github.com/mit-finalproject-term3/job-portal/blob/sana/public/Home%20Page.png
-MIT Dashboard https://github.com/mit-finalproject-term3/job-portal/blob/sana/public/MIT%20Dashboard.png
-MIT login Page https://github.com/mit-finalproject-term3/job-portal/blob/sana/public/MIT%20login%20page.png
+Balsamiq is used to create wireframes https://balsamiq.com/
+
+Home page [click here](https://github.com/mit-finalproject-term3/job-portal/blob/sana/public/Home%20Page.png)
+
+Job application form [click here](https://github.com/mit-finalproject-term3/job-portal/blob/sana/public/job%20application%20form.png)
+
+Job descriptions page [click here](https://github.com/mit-finalproject-term3/job-portal/blob/sana/public/Home%20Page.png)
+
+MIT Dashboard [click here](https://github.com/mit-finalproject-term3/job-portal/blob/sana/public/MIT%20Dashboard.png)
+
+MIT login Page [click here](https://github.com/mit-finalproject-term3/job-portal/blob/sana/public/MIT%20login%20page.png)
 
 ## Deployment
 Website is deployed through
