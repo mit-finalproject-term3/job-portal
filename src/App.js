@@ -28,6 +28,8 @@ import Header from './Components/Header';
 import Contact from './Components/Contact';
 import Top from './Components/Top';
 import PostJob from './Components/PostJob';
+import Mainpage from './Components/Mainpage';
+
 import Login from './Auth/Login';
 import Logout from './Auth/Logout';
 import {Layout} from 'antd';
@@ -46,6 +48,8 @@ const App = () => {
           <Route path="/contact" component={Contact}/>
           <Route path="/login" component={Login} />
           <Route path="/logout" component={Logout} />
+          <Route path="/mainpage" component={Mainpage} />
+
         </Switch>
       </Content>
       <Footer style={{ textAlign: 'center' }}>

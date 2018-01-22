@@ -21,7 +21,7 @@ const header = () => (
       <Menu.Item key="3">
         <Link to='/contact'>Contact</Link>
       </Menu.Item>
-      <Menu.Item key="3">
+      <Menu.Item key="4">
         {
           isAuthenticated() ? (<Link to='/logout'>Logout</Link>) : (<Link to='/login'>Login</Link>)
         }

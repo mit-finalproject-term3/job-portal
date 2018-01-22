@@ -38,7 +38,7 @@ const Top = () => (
       <h2>Top Page</h2>
     <br/>
     <div className="mainpic_div">
-       <img src="mainpic.jpg" alt="mainpic" className="mainpic" width={800}/>
+       <img src="mainpic.jpg" alt="mainpic" className="mainpic"/>
     </div>
     <br/>
     <h1>Current Opportunities</h1>

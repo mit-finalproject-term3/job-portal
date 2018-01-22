@@ -76,6 +76,7 @@ const WrappedDynamicRule = Form.create()(Contact);
 // ReactDOM.render(<WrappedDynamicRule />, mountNode);
 
 
+
 export default WrappedDynamicRule;
 
 
