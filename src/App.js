@@ -1,27 +1,27 @@
+import Navbar from './Components/Navbar';
+import Top from './Components/Top';
+import Mainpage from './Components/Mainpage';
+import './App.css';
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { push } from 'react-router-redux';
 import store from './store';
+
 import FixedButton from './components/FixedButton';
 import SideNav from './components/SideNav';
 import SearchPage from './components/SearchPage';
 import PostAJob from './components/PostAJob';
 import AboutPage from './components/AboutPage';
+
 //import PrivateRoute from './containers/PrivateRoute';
+
+import SearchPage from './Components/SearchPage';
+import PostAJob from './Components/PostAJob';
+import AboutPage from './Components/AboutPage';
 
 const { dispatch } = store;
 class App extends Component {
-  constructor() {
-    super();
-
-    this.openSideMenu = this.openSideMenu.bind(this);
-  }
-
-  openSideMenu() {
-    document.getElementById('side-nav').style.width = '26em';
-  }
-
   redirectToPostJobListing() {
     dispatch(push('/postjob'));
   }
@@ -47,12 +47,14 @@ class App extends Component {
           source="navbar-menu.png"
           callback={this.openSideMenu}
         />
-        <SideNav />
         <FixedButton
           id="post-listing"
           source="upload.svg"
           callback={this.redirectToPostJobListing}
         />
+
+        <Navbar />
+
         <h3 className="black-logo-title">
           <Link className="black" to="/home">
             MIT
@@ -61,8 +63,9 @@ class App extends Component {
         <div className="grid">
           <Switch>
             <Route path={match.path} exact component={SearchPage} />
-            <Route path="/postjob" component={PostAJob} />
             <Route path="/about" component={AboutPage} />
+            <Route path="/postajob" component={PostAJob} />
+            <Route path="/mainpage" component={Mainpage} />
           </Switch>
         </div>
       </div>

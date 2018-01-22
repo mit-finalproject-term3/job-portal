@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 class PrivateRoute extends Component {
   render() {
     const { component: Component, ...props } = this.props;
-    const {isAuthenticated} =  this.props.auth;
+    const { isAuthenticated } = this.props.auth;
     return (
       <Route
         {...props}
