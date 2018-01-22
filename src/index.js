@@ -14,22 +14,25 @@ import Callback from './containers/Callback/Callback';
 
 const auth = new Auth();
 
-const handleAuthentication = ({location}) => {
+const handleAuthentication = ({ location }) => {
   if (/access_token|id_token|error/.test(location.hash)) {
     auth.handleAuthentication();
   }
-}
+};
 
 ReactDOM.render(
   <Provider store={store}>
     {/* ConnectedRouter will use the store from Provider automatically */}
     <ConnectedRouter history={history}>
       <Switch>
-        <Route path="/" render={(props) => <App auth={auth} {...props} />}/>
-        <Route path="/callback" render={(props) => {
-          handleAuthentication(props);
-          return <Callback {...props} /> 
-        }}/>
+        <Route path="/" render={props => <App auth={auth} {...props} />} />
+        <Route
+          path="/callback"
+          render={props => {
+            handleAuthentication(props);
+            return <Callback {...props} />;
+          }}
+        />
       </Switch>
     </ConnectedRouter>
   </Provider>,

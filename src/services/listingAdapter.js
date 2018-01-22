@@ -4,9 +4,7 @@ import store from '../store';
 
 export const listingAdapter = {
   fetchAllListings: () => {
-    return request('/jobs', { method: 'GET' }).then(
-      response => response
-    );
+    return request('/jobs', { method: 'GET' }).then(response => response);
   },
 
   createListing: listing => {
