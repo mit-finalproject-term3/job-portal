@@ -1,11 +1,7 @@
 import Navbar from './Components/Navbar';
 import Top from './Components/Top';
-// import PostJob from './Components/PostJob';
 import Mainpage from './Components/Mainpage';
-// import Login from './Auth/Login';
-// import Logout from './Auth/Logout';
 import './App.css';
-
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -14,7 +10,6 @@ import store from './store';
 import SearchPage from './Components/SearchPage';
 import PostAJob from './Components/PostAJob';
 import AboutPage from './Components/AboutPage';
-//import PrivateRoute from './containers/PrivateRoute';
 
 const { dispatch } = store;
 class App extends Component {
