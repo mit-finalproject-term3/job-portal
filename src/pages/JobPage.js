@@ -26,7 +26,7 @@ class JobPage extends Component {
             ) : ( null )
           }
         </div>
-        <div className="add-jobs"><button onClick={this.loadAdditionalJobs}>Load more...</button></div>
+        <div className="Apply"><button onClick={this.loadAdditionalJobs}>Apply</button></div>
 
 
       </div>

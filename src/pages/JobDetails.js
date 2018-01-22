@@ -27,6 +27,9 @@ class JobDetails extends Component {
         <ul>
           {jobItems()}
         </ul>
+
+        <div className="Apply"><button onClick={this.loadAdditionalJobs}>Apply</button></div>
+
       </div>
     );
   }
