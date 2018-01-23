@@ -78,12 +78,26 @@ class App extends Component {
                   console.log('loading the root route')
                   return (
                     <JobPage jobs={jobs} />
+
                   )
                 }} />
 
                 <Route path='/jobdetails/:id' render={
                   ({ match }) => {
                     console.log('in jobdetails with id: ', match.params.id);
+                    console.log(match)
+                    const id = match.params.id
+                    const job = jobs.find((job) => job._id === id)
+                    if (!job) {
+                      return (<p>Job Not Found! ({id})</p>)
+                    }
+                    return (<Job job={job} />)
+                  }
+                } />
+
+                <Route path='/jobapplication/:id' render={
+                  ({ match }) => {
+                    console.log('in jobapplication with id: ', match.params.id);
                     console.log(match)
                     const id = match.params.id
                     const job = jobs.find((job) => job._id === id)

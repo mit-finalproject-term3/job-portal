@@ -16,9 +16,9 @@ export default function JobForm({onSubmit}) {
 
   }
 
-console.log('loaded JobForm')
+  console.log('loaded JobForm')
 
-return (
+  return (
   <div id="my-form">
     <form onSubmit={handleFormSubmission}>
       <label>

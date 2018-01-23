@@ -3,10 +3,6 @@ import '../App.css';
 import Header from '../Components/JobHeader';
 import Job from '../Components/Job';
 
-
-
-
-
 class JobPage extends Component {
   render() {
     console.log(this.props.jobs)
@@ -26,7 +22,7 @@ class JobPage extends Component {
             ) : ( null )
           }
         </div>
-        <div className="Apply"><button onClick={this.loadAdditionalJobs}>Apply</button></div>
+        //<div className="Apply"><button onClick={this.loadAdditionalJobs}>Apply</button></div>
 
 
       </div>

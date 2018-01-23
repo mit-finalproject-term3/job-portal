@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../Components/JobHeader';
+
 // import Job from '../Components/Job';
 
 class JobDetails extends Component {
@@ -16,7 +17,9 @@ class JobDetails extends Component {
                 <h2> {jobs[key].title} </h2>
                 <p> {jobs[key].sallary} </p>
                 <p> {jobs[key].description} </p>
+
               </li>
+
             )
           })
       )
@@ -24,11 +27,12 @@ class JobDetails extends Component {
     return (
       <div className="jobdetails">
         <Header />
+        <div className="Apply"><button>Apply</button></div>
         <ul>
-          {jobItems()}
-        </ul>
 
-        <div className="Apply"><button onClick={this.loadAdditionalJobs}>Apply</button></div>
+          {jobItems()}
+
+        </ul>
 
       </div>
     );
