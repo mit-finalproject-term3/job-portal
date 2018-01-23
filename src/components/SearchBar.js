@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchAllListings } from '../actions/listingActions';
+import { Link } from 'react-router-dom';
 
 class SearchBar extends Component {
   constructor() {
@@ -32,8 +33,8 @@ class SearchBar extends Component {
   }
 
   renderResults() {
-    const {sortedListing} =  this.state;
-    const { allListings} =  this.props;
+    const { sortedListing } = this.state;
+    const { allListings } = this.props;
     let listings = sortedListing;
     if (listings.length === 0) {
       listings = allListings;
@@ -45,22 +46,22 @@ class SearchBar extends Component {
             <div key={i} className="col-12 card">
               <div className="row">
                 <div className="col-12">
-                  <h2>
-                    {listing.title}
-                  </h2>
+                  <h2>{listing.title}</h2>
                   <h4>
-                    {listing.location} - {listing.type} - ${listing.compensation}
+                    {listing.location} - {listing.type} - ${
+                      listing.compensation
+                    }
                   </h4>
-                  <p>
-                    {listing.description}
-                  </p>
+                  <p>{listing.description}</p>
                 </div>
               </div>
 
               <div className="row">
                 <div className="col-3">
                   <a href={listing.company_url} target="_blank">
-                    <button className="fill primary">Apply</button>
+                    <Link to="/applyform">
+                      <button className="fill primary">Apply</button>
+                    </Link>
                   </a>
                 </div>
               </div>

@@ -8,6 +8,8 @@ import store from './store';
 // import SideNav from './components/SideNav';
 import SearchPage from './components/SearchPage';
 import PostAJob from './components/PostAJob';
+import ApplyForm from './components/ApplyForm';
+
 import AboutPage from './components/AboutPage';
 import Contact from './components/Contact';
 import './App.css';
@@ -44,6 +46,7 @@ class App extends Component {
             <Route path="/postajob" component={PostAJob} />
             <Route path="/mainpage" component={Mainpage} />
             <Route path="/contact" component={Contact} />
+            <Route path="/applyform" component={ApplyForm} />
           </Switch>
         </div>
       </div>

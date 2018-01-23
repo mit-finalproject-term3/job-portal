@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
 const FormItem = Form.Item;
-
+const { TextArea } = Input;
 const formItemLayout = {
   labelCol: { span: 4 },
   wrapperCol: { span: 8 }
@@ -55,6 +55,18 @@ class Contact extends React.Component {
             ]
           })(<Input placeholder="Enter your Email" />)}
         </FormItem>
+
+        <FormItem {...formItemLayout} label="Comment">
+          {getFieldDecorator('comment', {
+            rules: [
+              {
+                required: this.state.checkNick,
+                message: 'Please input your comment'
+              }
+            ]
+          })(<TextArea rows={4} placeholder="Enter your Comment" />)}
+        </FormItem>
+
         <FormItem {...formTailLayout} />
         <FormItem {...formTailLayout}>
           <Button type="primary" onClick={this.check}>
@@ -65,15 +77,12 @@ class Contact extends React.Component {
     );
   }
 }
-
 const WrappedDynamicRule = Form.create()(Contact);
-
 export default WrappedDynamicRule;
 
 // import React from 'react';
 // import ReactDOM from 'react-dom';
 // import { Modal, Button } from 'antd';
-
 // class Contact extends React.Component {
 //   state = {
 //     ModalText: 'Address: 273 Alfred St N, North Sydney NSW 2060',
@@ -123,5 +132,4 @@ export default WrappedDynamicRule;
 //     );
 //   }
 // }
-
 // export default Contact;
