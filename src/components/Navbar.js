@@ -34,6 +34,12 @@ export default class Navbar extends Component {
               <Menu.Item key="4">
                 <Link to="/contact">Contact</Link>
               </Menu.Item>
+              <Menu.Item key="5">
+                <Link to="/login">Login</Link>
+              </Menu.Item>
+              <Menu.Item key="6">
+                <Link to="/logout">Logout</Link>
+              </Menu.Item>
             </Menu>
           </Col>
         </Row>
